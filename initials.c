@@ -2,6 +2,7 @@
 #include <cs50.h>
 #include <string.h>
 #include <ctype.h>
+//a initial work
 
 int main(void)
 {
@@ -19,13 +20,11 @@ int main(void)
         
         
         
-        if (name[i] == space)
+        if (((name[i] == space) && (name[i+1] != space)) && ( i+1 < ls)) 
+        // i+1 < ls is very important! you can delete it the run check50 2016.initials.more initials.c then see what's up
         {
-            if(name[i+1] != space)
-            {
-                name[i+1] = toupper(name[i+1]);
-                printf("%c", name[i+1]);
-            }
+            name[i+1] = toupper(name[i+1]);
+            printf("%c", name[i+1]);
         }
     }
     printf("\n");
